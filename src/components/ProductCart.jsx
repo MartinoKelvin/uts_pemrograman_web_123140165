@@ -23,7 +23,6 @@ export default function ProductCard({ product, addCart }) {
   return (
     <Link to={`/product/${product.id}`}>
       <div className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
-        {/* Product Image */}
         <div className="bg-muted h-48 flex items-center justify-center overflow-hidden">
           <img
             src={product.image || "/placeholder.svg"}
@@ -32,11 +31,9 @@ export default function ProductCard({ product, addCart }) {
           />
         </div>
 
-        {/* Product Info */}
         <div className="p-4 flex flex-col flex-1">
           <h3 className="font-semibold text-sm line-clamp-2 mb-2">{product.title}</h3>
 
-          {/* Rating */}
           <div className="flex items-center gap-1 mb-3">
             <div className="flex items-center">
               {[...Array(5)].map((_, i) => (
@@ -54,12 +51,10 @@ export default function ProductCard({ product, addCart }) {
             <span className="text-xs text-muted-foreground">({product.rating?.count || 0})</span>
           </div>
 
-          {/* Price */}
           <div className="mb-4 mt-auto">
             <p className="text-lg font-bold text-primary">${product.price.toFixed(2)}</p>
           </div>
 
-          {/* Add to Cart Button */}
           <button
             onClick={handleAddToCart}
             className={`w-full py-2 px-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 ${

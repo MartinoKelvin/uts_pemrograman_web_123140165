@@ -91,7 +91,6 @@ export default function ProductDetail() {
         </Link>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Product Image */}
           <div className="bg-[#1E293B] border border-slate-700 rounded-lg p-8 flex items-center justify-center min-h-96">
             <img
               src={product.image || "/placeholder.svg"}
@@ -100,15 +99,11 @@ export default function ProductDetail() {
             />
           </div>
 
-          {/* Product Details */}
           <div className="flex flex-col">
-            {/* Category */}
             <p className="text-sm text-slate-400 capitalize mb-2">{product.category}</p>
 
-            {/* Title */}
             <h1 className="text-3xl font-bold mb-4 text-[#F8FAFC]">{product.title}</h1>
 
-            {/* Rating */}
             <div className="flex items-center gap-3 mb-6">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
@@ -124,18 +119,16 @@ export default function ProductDetail() {
               </span>
             </div>
 
-            {/* Price */}
             <div className="mb-6">
               <p className="text-4xl font-bold text-[#38BDF8]">${product.price.toFixed(2)}</p>
             </div>
 
-            {/* Description */}
             <div className="mb-8">
               <h2 className="font-semibold mb-2 text-[#38BDF8]">Description</h2>
               <p className="text-slate-300 leading-relaxed">{product.description}</p>
             </div>
 
-            {/* Quantity Selector */}
+            
             <div className="mb-6">
               <label className="block text-sm font-medium mb-2 text-[#38BDF8]">Quantity</label>
               <div className="flex items-center gap-3">
@@ -161,7 +154,6 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            {/* Add to Cart Button */}
             <button
               onClick={handleAddToCart}
               className={`w-full py-3 px-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 mb-4 ${
@@ -174,7 +166,6 @@ export default function ProductDetail() {
               {added ? "Added to Cart!" : "Add to Cart"}
             </button>
 
-            {/* Stock Info */}
             <div className="bg-[#1E293B] border border-slate-700 rounded-lg p-4">
               <p className="text-sm text-slate-300">
                 <span className="font-semibold text-[#38BDF8]">In Stock:</span> Available for immediate delivery

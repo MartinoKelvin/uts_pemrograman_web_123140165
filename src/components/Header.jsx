@@ -13,7 +13,6 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-[#1E293B] border-b border-slate-700 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="w-8 h-8 bg-[#38BDF8] rounded-lg flex items-center justify-center">
               <span className="text-[#F8FAFC] font-bold text-lg">M</span>
@@ -21,7 +20,6 @@ export default function Header() {
             <span className="font-bold text-lg hidden sm:inline text-[#F8FAFC]">Martino Mart</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <Link to="/" className="text-[#F8FAFC] hover:text-[#38BDF8] transition">
               Shop
@@ -31,7 +29,6 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Cart Button */}
           <Link
             to="/cart"
             className="relative flex items-center gap-2 px-4 py-2 rounded-lg bg-[#38BDF8] text-[#F8FAFC] hover:bg-sky-500 transition"
@@ -45,13 +42,11 @@ export default function Header() {
             )}
           </Link>
 
-          {/* Mobile Menu Button */}
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 text-[#F8FAFC]">
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <nav className="md:hidden pb-4 flex flex-col gap-4">
             <Link to="/" className="text-[#F8FAFC] hover:text-[#38BDF8] transition">

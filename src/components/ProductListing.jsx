@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 "use client"
 
 import { useState, useEffect } from "react"
@@ -15,10 +16,8 @@ export default function ProductListing() {
   const [priceRange, setPriceRange] = useState([0, 1000])
   const [sortBy, setSortBy] = useState("featured")
   const [showFilters, setShowFilters] = useState(false)
-  // eslint-disable-next-line no-unused-vars
   const { addToCart } = useCart()
 
-  // Fetch products and categories
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -49,19 +48,15 @@ export default function ProductListing() {
     fetchData()
   }, [])
 
-  // Filter and sort products
   useEffect(() => {
     let filtered = products
 
-    // Filter by category
     if (selectedCategory !== "all") {
       filtered = filtered.filter((p) => p.category === selectedCategory)
     }
 
-    // Filter by price range
     filtered = filtered.filter((p) => p.price >= priceRange[0] && p.price <= priceRange[1])
 
-    // Sort
     switch (sortBy) {
       case "price-low":
         filtered.sort((a, b) => a.price - b.price)
@@ -103,7 +98,6 @@ export default function ProductListing() {
       </div>
 
       <div className="flex gap-6">
-        {/* Filters Sidebar */}
         <aside className={`${showFilters ? "block" : "hidden"} md:block w-full md:w-64 flex-shrink-0`}>
           <div className="bg-[#1E293B] border border-slate-700 rounded-lg p-6 sticky top-20">
             <div className="flex justify-between items-center mb-4 md:hidden">
@@ -117,7 +111,6 @@ export default function ProductListing() {
               </button>
             </div>
 
-            {/* Category Filter */}
             <div className="mb-6">
               <h3 className="font-semibold mb-3 text-[#38BDF8]">Category</h3>
               <div className="space-y-2">
@@ -150,7 +143,6 @@ export default function ProductListing() {
               </div>
             </div>
 
-            {/* Price Range Filter */}
             <div className="mb-6">
               <h3 className="font-semibold mb-3 text-[#38BDF8]">Price Range</h3>
               <div className="space-y-2">
@@ -170,7 +162,6 @@ export default function ProductListing() {
               </div>
             </div>
 
-            {/* Sort */}
             <div>
               <h3 className="font-semibold mb-3 text-[#38BDF8]">Sort By</h3>
               <select
@@ -188,9 +179,7 @@ export default function ProductListing() {
           </div>
         </aside>
 
-        {/* Products Grid */}
         <div className="flex-1">
-          {/* Mobile Filter Toggle */}
           <button
             onClick={() => setShowFilters(!showFilters)}
             className="md:hidden mb-4 px-4 py-2 border border-slate-700 rounded-lg bg-[#1E293B] hover:bg-slate-800 text-[#F8FAFC] transition"
