@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import { CartProvider } from "./context/CartContext"
 import Header from "./components/Header"
 import Home from "./pages/Home"
@@ -10,21 +10,21 @@ import "./App.css"
 
 function App() {
   return (
-
-    <BrowserRouter>
-      <CartProvider>
-        <Router>
+    <CartProvider>
+      <Router basename={import.meta.env.BASE_URL || "/"}>
+        <div className="bg-[#0F172A] min-h-screen">
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/*" element={<NotFound />} />
+            <Route path="/404" element={<NotFound />} />
+            <Route path="*" element={<Navigate to="/404" replace />} />
           </Routes>
-        </Router>
-      </CartProvider>
-   </BrowserRouter>
+        </div>
+      </Router>
+    </CartProvider>
   )
 }
 
