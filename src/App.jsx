@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
+import { BrowserRouter , Routes, Route, Navigate } from "react-router-dom"
 import { CartProvider } from "./context/CartContext"
 import Header from "./components/Header"
 import Home from "./pages/Home"
@@ -11,7 +11,7 @@ import "./App.css"
 function App() {
   return (
     <CartProvider>
-      <Router basename={import.meta.env.BASE_URL || "/"}>
+      <BrowserRouter>
         <div className="bg-[#0F172A] min-h-screen">
           <Header />
           <Routes>
@@ -23,7 +23,7 @@ function App() {
             <Route path="*" element={<Navigate to="/404" replace />} />
           </Routes>
         </div>
-      </Router>
+      </BrowserRouter >
     </CartProvider>
   )
 }
