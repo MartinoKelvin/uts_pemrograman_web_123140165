@@ -7,6 +7,7 @@ import Cart from "./pages/Cart"
 import NotFound from "./components/NotFound"
 import Checkout from "./pages/Checkout"
 import "./App.css"
+import Product from "./pages/Product"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/product" element={<Product  />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />

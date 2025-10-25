@@ -22,10 +22,10 @@ export default function Header() {
 
           <nav className="hidden md:flex items-center gap-8">
             <Link to="/" className="text-[#F8FAFC] hover:text-[#38BDF8] transition">
-              Shop
+              Home
             </Link>
-            <Link to="/checkout" className="text-[#F8FAFC] hover:text-[#38BDF8] transition">
-              Checkout
+            <Link to="/Product" className="text-[#F8FAFC] hover:text-[#38BDF8] transition">
+              Product
             </Link>
           </nav>
 
@@ -50,10 +50,10 @@ export default function Header() {
         {mobileMenuOpen && (
           <nav className="md:hidden pb-4 flex flex-col gap-4">
             <Link to="/" className="text-[#F8FAFC] hover:text-[#38BDF8] transition">
-              Shop
+              Home
             </Link>
-            <Link to="/checkout" className="text-[#F8FAFC] hover:text-[#38BDF8] transition">
-              Checkout
+            <Link to="/Product" className="text-[#F8FAFC] hover:text-[#38BDF8] transition">
+              Product
             </Link>
           </nav>
         )}

@@ -20,7 +20,7 @@ export default function Cart() {
           <h1 className="text-2xl font-bold mb-2 text-[#F8FAFC]">Your cart is empty</h1>
           <p className="text-slate-400 mb-6">Start shopping to add items to your cart</p>
           <Link
-            to="/"
+            to="/product"
             className="inline-block px-6 py-2 bg-[#38BDF8] text-[#F8FAFC] rounded-lg hover:bg-sky-500 transition"
           >
             Continue Shopping
@@ -34,7 +34,7 @@ export default function Cart() {
     <div className="min-h-screen bg-[#0F172A] text-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Back Button */}
-        <Link to="/" className="flex items-center gap-2 text-[#38BDF8] hover:text-sky-400 transition-colors mb-8">
+        <Link to="/product" className="flex items-center gap-2 text-[#38BDF8] hover:text-sky-400 transition-colors mb-8">
           <ArrowLeft size={20} />
           Continue Shopping
         </Link>
