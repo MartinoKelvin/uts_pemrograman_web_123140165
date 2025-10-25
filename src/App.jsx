@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom"
 import { CartProvider } from "./context/CartContext"
 import Header from "./components/Header"
 import Home from "./pages/Home"
@@ -11,6 +11,7 @@ import "./App.css"
 function App() {
   return (
 
+    <BrowserRouter>
       <CartProvider>
         <Router>
           <Header />
@@ -23,7 +24,7 @@ function App() {
           </Routes>
         </Router>
       </CartProvider>
-   
+   </BrowserRouter>
   )
 }
 
